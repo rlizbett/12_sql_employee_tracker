@@ -56,3 +56,32 @@ function userQuestion() {
     });
 }
 
+//function for view all departments
+function viewAllDepartments(){
+    const sql=`Select * From Department`;
+    dbase.query(sql, (err, result) => {
+        if(err) throw err
+        console.table(result)
+        userQuestion();
+    })
+}
+
+//function for view all roles
+function viewAllRoles(){
+    const sql=`Select * From role`;
+    dbase.query(sql, (err, result) => {
+        if(err) throw err
+        console.table(result)
+        userQuestion();
+    })
+}
+
+//function for view all employees
+function viewAllEmployees(){
+    const sql=`Select * From Employees`;
+    dbase.query(sql, (err, result) => {
+        if(err) throw err
+        console.table(result)
+        userQuestion();
+    })
+}
