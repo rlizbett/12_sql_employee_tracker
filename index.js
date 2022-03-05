@@ -58,7 +58,7 @@ function userQuestion() {
 
 //function for: view all departments
 function viewAllDepartments() {
-    const sql = `Select * From Department`;
+    const sql = `SELECT * FROM department`;
     dbase.query(sql, (err, result) => {
         if (err) throw err
         console.table(result)
@@ -78,7 +78,7 @@ function viewAllRoles() {
 
 //function for: view all employees
 function viewAllEmployees() {
-    const sql = `Select * From Employees`;
+    const sql = `SELECT * FROM employee`;
     dbase.query(sql, (err, result) => {
         if (err) throw err
         console.table(result)
@@ -90,14 +90,14 @@ function viewAllEmployees() {
 function addADepartment() {
     inquirer.prompt([
         {
-            name: 'depart_name',
+            name: 'departname',
             type: 'input',
             message: 'What department would you like to add?'
         }
     ])
         .then((response) => {
             const sql = `INSERT INTO department (name) VALUES (?)`;
-            dbase.query(sql, (err, result) => {
+            dbase.query(sql, response.departName, (err, result) => {
                 if (err) throw err
                 console.table(result)
                 userQuestion();
