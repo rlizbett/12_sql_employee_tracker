@@ -90,7 +90,7 @@ function viewAllEmployees() {
 function addADepartment() {
     inquirer.prompt([
         {
-            name: 'departname',
+            name: 'departName',
             type: 'input',
             message: 'What department would you like to add?'
         }
@@ -109,7 +109,7 @@ function addADepartment() {
 function addARole() {
     inquirer.prompt([
         {
-            name: 'role_name',
+            name: 'title',
             type: 'input',
             message: 'What role would you like to add?'
         },
@@ -119,7 +119,7 @@ function addARole() {
             message: 'What is the salary of this role?'
         },
         {
-            name: 'dept_name',
+            name: 'department_id',
             type: 'input',
             message: 'What department is this role in?',
             choices: 'departments'
